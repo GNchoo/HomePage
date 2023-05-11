@@ -1,0 +1,20 @@
+body {
+  background: url("../../assets/sky.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.weatherBox {
+  border: 3px solid white;
+  padding: 50px;
+  border-radius: 2rem;
+  background-color: white;
+}
