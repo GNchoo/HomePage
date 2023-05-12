@@ -92,6 +92,7 @@ function App() {
             {weather?.weather[0]?.description.toLowerCase().includes("눈") && <Snow />}
             {weather?.weather[0]?.description.toLowerCase().includes("비") && <Rain />}
             {weather?.weather[0]?.description.toLowerCase().includes("구름") && <Cloud />}
+            {weather?.weather[0]?.description.toLowerCase().includes("흐림") && <Cloud />}
             <WeatherBox weather={weather} />
           </div>
           <WeatherButton cities={cities} setCity={setCity} getCurrentLocation={getCurrentLocation} />
