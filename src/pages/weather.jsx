@@ -91,6 +91,7 @@ function App() {
           <div className="weather-box">
             {weather?.weather[0]?.description.toLowerCase().includes("눈") && <Snow />}
             {weather?.weather[0]?.description.toLowerCase().includes("비") && <Rain />}
+            {weather?.weather[0]?.description.toLowerCase().includes("이슬") && <Rain />}
             {weather?.weather[0]?.description.toLowerCase().includes("구름") && <Cloud />}
             {weather?.weather[0]?.description.toLowerCase().includes("흐림") && <Cloud />}
             <WeatherBox weather={weather} />
