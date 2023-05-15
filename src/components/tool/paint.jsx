@@ -4,7 +4,7 @@ const Paint = () => {
   const [mouseDown, setMouseDown] = useState(false);
   const [canvas, setCanvas] = useState(null);
   const [context, setContext] = useState(null);
-  const [color, setColor] = useState("#000000"); // 그려지는 색깔 설정
+  const [color, setColor] = useState("#000000"); // 그려지는 기본색깔 설정
   const [filling, setFilling] = useState(false); // 색상 채우기 여부 설정
   const [erasing, setErasing] = useState(false); // 지우개 모드 설정
 

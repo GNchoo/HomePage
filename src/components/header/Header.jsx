@@ -1,9 +1,6 @@
 import React, { useRef, useEffect } from "react";
-
 import { Link, useLocation } from "react-router-dom";
-
 import "./header.css";
-
 import logo from "../../assets/sky.jpg";
 
 const headerNav = [
@@ -20,9 +17,10 @@ const headerNav = [
     path: "/game",
   },
   {
-    display: "그림판",
-    path: "/paint",
+    display: "유틸",
+    path: "/Util",
   },
+
   {
     display: "로그인",
     path: "/Login",

@@ -6,7 +6,9 @@ import Home from "../pages/home";
 import Weather from "../pages/weather";
 import Game from "../pages/game";
 import Worm from "../components/game/worm";
-import Paint from "../pages/paint";
+import Util from "../pages/util";
+import Paint from "../components/tool/paint";
+import Cal from "../components/tool/cal";
 
 function rou() {
   return (
@@ -16,7 +18,9 @@ function rou() {
         <Route path="/weather" element={<Weather />} />
         <Route path="/game" element={<Game />} />
         <Route path="/worm" element={<Worm />} />
+        <Route path="/util" element={<Util />} />
         <Route path="/paint" element={<Paint />} />
+        <Route path="/cal" element={<Cal />} />
       </Routes>
     </div>
   );
