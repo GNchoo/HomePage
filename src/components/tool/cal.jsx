@@ -32,7 +32,7 @@ function Calculator() {
   const getResult = () => {
     let replace_str = calc.replace(/×/gi, "*").replace(/÷/gi, "/");
 
-    if (replace_str.endsWith("+") || replace_str.endsWith("-") || replace_str.endsWith("*") || replace_str.endsWith("/")) {
+    if (replace_str.endsWith(" + ") || replace_str.endsWith(" - ") || replace_str.endsWith(" * ") || replace_str.endsWith(" / ")) {
       alert("식의 마지막에 기호가 올 수 없습니다.");
       return;
     }
