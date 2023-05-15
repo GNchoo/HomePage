@@ -5,6 +5,7 @@ function Calculator() {
   const [calc, setCalc] = useState("");
   const [operCheck, setOperCheck] = useState(true);
   const [pointCheck, setPointCheck] = useState(true);
+  const [history, setHistory] = useState([]);
 
   const getNum = (e) => {
     setCalc((prev) => prev + e.target.value);
@@ -13,7 +14,7 @@ function Calculator() {
 
   const getOper = (e) => {
     if (operCheck) {
-      setCalc((prev) => prev + e.target.value);
+      setCalc((prev) => prev + " " + e.target.value + " ");
       setOperCheck(false);
     }
   };
@@ -31,6 +32,11 @@ function Calculator() {
   const getResult = () => {
     let replace_str = calc.replace(/×/gi, "*").replace(/÷/gi, "/");
 
+    if (replace_str.endsWith("+") || replace_str.endsWith("-") || replace_str.endsWith("*") || replace_str.endsWith("/")) {
+      alert("식의 마지막에 기호가 올 수 없습니다.");
+      return;
+    }
+
     if (isNaN(eval(replace_str))) {
       setCalc("");
     } else if (eval(replace_str) == Infinity) {
@@ -38,7 +44,9 @@ function Calculator() {
       setCalc("");
       return false;
     } else {
-      setCalc((prev) => eval(replace_str));
+      const result = eval(replace_str);
+      setCalc((prev) => result);
+      setHistory((prev) => [...prev, `${calc} = ${result}`]);
     }
   };
 
@@ -115,6 +123,13 @@ function Calculator() {
         <button className="Button CalButton" onClick={getResult}>
           =
         </button>
+      </div>
+      <div className="HistoryContainer">
+        <ul className="HistoryList">
+          {history.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
