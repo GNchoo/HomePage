@@ -4,7 +4,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin-top: 100px; /* 헤더의 높이에 따라 조절해야 할 수도 있습니다 */
+  padding: 100px;
+  margin-top: 80px;
+  background-image: url("../../assets/cal.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .CalculatorContainer {
@@ -12,19 +17,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 100px; /* 헤더의 높이에 따라 조절해야 할 수도 있습니다 */
 }
 
 .HistoryContainer {
   display: flex;
   flex-direction: column-reverse;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: left;
+  justify-content: flex-start;
+  font-size: 30px;
   width: 50%;
-  height: 100%;
-  padding: 10px;
-  background-color: rgba(218, 224, 199, 0.185);
+  height: 50%;
+  padding: 100px;
   overflow-y: auto;
+  border-radius: 40px;
+  background-color: rgba(79, 79, 79, 0.789);
+  color: white;
 }
 
 .History {
@@ -34,18 +41,20 @@
 
 .InputBar {
   width: 50%;
-  height: 50px;
-  font-size: 24px;
+  height: 100px;
+  font-size: 30px;
   text-align: right;
   padding: 10px;
-  margin-bottom: 10px;
-  background-color: rgba(34, 35, 30, 0.514);
+  border-radius: 40px;
+  background-color: rgba(99, 99, 99, 0.514);
+  color: white;
 }
 
 .ButtonContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
+  padding: 20px;
 }
 
 .Button {

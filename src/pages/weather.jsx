@@ -67,7 +67,7 @@ function App() {
   }, [city, getCurrentLocation, getWeatherByCity]);
 
   return (
-    <div className="App">
+    <div className="body">
       {loading ? (
         <div className="container">
           <ClipLoader color="#ffffff" loading={loading} size={150} />

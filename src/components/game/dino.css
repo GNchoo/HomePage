@@ -1,0 +1,21 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+
+#board {
+  background-color: lightgray;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/switch.webp");
+  background-size: cover;
+  background-position: center;
+}

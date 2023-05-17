@@ -13,8 +13,8 @@ body {
   align-items: center;
 }
 .weatherBox {
-  border: 3px solid white;
+  border: 3px solid rgb(255, 255, 255, 0.5);
   padding: 50px;
   border-radius: 2rem;
-  background-color: white;
+  background-color: rgba(88, 103, 114, 0.389);
 }

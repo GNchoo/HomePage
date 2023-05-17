@@ -21,6 +21,10 @@ export class Game extends Component {
         <h2>
           <Link to="/worm">Play</Link>
         </h2>
+        <h1 style={{ color: "white", textShadow: "2px 2px 4px black" }}>크롬다이노</h1>
+        <h2>
+          <Link to="/dino">Play</Link>
+        </h2>
       </div>
     );
   }
