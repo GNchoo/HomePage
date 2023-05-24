@@ -52,7 +52,7 @@ const Header = () => {
       <div className="header__wrap">
         <div className="logo">
           <img src={logo} alt="" />
-          <Link to="/">경남</Link>
+          MyPage
         </div>
         <ul className="header__nav">
           {headerNav.map((e, i) => (

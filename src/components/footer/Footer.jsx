@@ -7,12 +7,12 @@ import logo from "../../assets/sky.jpg";
 
 const Footer = () => {
   return (
-    <div className="footer" style={{ backgroundColor: "black" }}>
+    <div className="footer">
       <div className="footer__content">
         <div className="footer__content__logo">
           <div className="logo">
             {<img src={logo} alt="" />}
-            <Link to="/">개인홈페이지</Link>
+            MyPage
             <br />
           </div>
         </div>
