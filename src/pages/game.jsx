@@ -11,7 +11,7 @@ export class Game extends Component {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "90vh",
+          height: "100vh",
           background: `url(${background})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
