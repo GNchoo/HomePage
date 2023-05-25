@@ -1,0 +1,19 @@
+.game-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/switch.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.game-title {
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+.game-link {
+  color: white;
+  text-decoration: none;
+}

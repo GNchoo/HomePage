@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import apiKey from "../api/api";
+import WApiKey from "../api/weatherApi";
 import "../components/weather/weather.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -18,7 +18,7 @@ function App() {
   const [cityNotFound, setCityNotFound] = useState(false);
 
   const getWeatherByCurrentLocation = useCallback(async (lat, lon) => {
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=kr&appid=${apiKey}&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=kr&appid=${WApiKey}&units=metric`;
     setLoading(true);
     let response = await fetch(url);
     let data = await response.json();
@@ -42,7 +42,7 @@ function App() {
       return;
     }
 
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=kr&appid=${apiKey}&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=kr&appid=${WApiKey}&units=metric`;
     setLoading(true);
     let response = await fetch(url);
     let data = await response.json();

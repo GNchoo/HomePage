@@ -1,0 +1,52 @@
+.worm-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/switch.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.game-over {
+  margin-bottom: 1rem;
+}
+
+.game-over h2 {
+  font-size: 2rem;
+  color: red;
+}
+.game-over h3 {
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.game-over button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-board {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(118, 116, 116);
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  border: 10px solid black;
+}
+
+.worm-segment {
+  background-color: rgb(130, 200, 130);
+  border: 1px solid black;
+}
+
+.food {
+  background-color: rgb(186, 71, 71);
+  border: 1px solid black;
+}

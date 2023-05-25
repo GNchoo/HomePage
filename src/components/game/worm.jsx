@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import background from "../../assets/switch.webp";
+import "./worm.css";
 
 function WormGame() {
   const [worm, setWorm] = useState([{ x: 10, y: 10 }]);
   const [food, setFood] = useState({ x: 0, y: 0 });
   const [direction, setDirection] = useState("right");
   const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(0);
+  const [intervalDelay, setIntervalDelay] = useState(200); // 초기 속도(delay)
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -41,12 +44,14 @@ function WormGame() {
       const newWorm = [head, ...worm];
 
       if (head.x === food.x && head.y === food.y) {
-        // Generate new food location
+        // 새로운 음식 위치 생성
         const newFood = {
           x: Math.floor(Math.random() * 20),
           y: Math.floor(Math.random() * 20),
         };
         setFood(newFood);
+        setScore((prevScore) => prevScore + 10); // 10점 추가
+        setIntervalDelay((prevDelay) => Math.max(50, prevDelay - 10)); // 간격(delay) 감소 (빨라짐)
       } else {
         newWorm.pop();
       }
@@ -54,66 +59,49 @@ function WormGame() {
       setWorm(newWorm);
     };
 
-    const gameInterval = setInterval(handleGameTick, 200);
+    const gameInterval = setInterval(handleGameTick, intervalDelay); // 업데이트된 간격(delay) 사용
 
     return () => {
       clearInterval(gameInterval);
     };
-  }, [worm, direction, food, gameOver]);
+  }, [worm, direction, food, gameOver, intervalDelay]);
 
   const handleRestart = () => {
     setWorm([{ x: 10, y: 10 }]);
     setDirection("right");
     setFood({ x: 0, y: 0 });
     setGameOver(false);
+    setIntervalDelay(200); // 속도(delay) 초기화
+    setScore(0);
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "95vh",
-        background: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="worm-container">
       <div>
         {gameOver ? (
-          <div>
-            <h2>Game Over</h2>
-            <button onClick={handleRestart}>Restart</button>
+          <div className="game-over">
+            <h2>게임 오버</h2>
+            <h3>종합 스코어 : {score}</h3> {/* 최종 스코어 표시 */}
+            <button onClick={handleRestart}>재시작</button>
           </div>
         ) : (
           <div>
-            <div
-              style={{
-                width: "500px",
-                height: "500px",
-                backgroundColor: "lightgray",
-                display: "grid",
-                gridTemplateColumns: "repeat(20, 1fr)",
-                gridTemplateRows: "repeat(20, 1fr)",
-              }}
-            >
+            <div className="game-board">
               {worm.map((segment, index) => (
                 <div
                   key={index}
+                  className="worm-segment"
                   style={{
                     gridColumnStart: segment.x + 1,
                     gridRowStart: segment.y + 1,
-                    backgroundColor: "green",
                   }}
                 />
               ))}
               <div
+                className="food"
                 style={{
                   gridColumnStart: food.x + 1,
                   gridRowStart: food.y + 1,
-                  backgroundColor: "red",
-                  border: "1px solid black",
                 }}
               />
             </div>

@@ -32,7 +32,14 @@ function Calculator() {
   const getResult = () => {
     let replace_str = calc.replace(/×/gi, "*").replace(/÷/gi, "/");
 
-    if (replace_str.endsWith(" + ") || replace_str.endsWith(" - ") || replace_str.endsWith(" * ") || replace_str.endsWith(" / ")) {
+    if (
+      replace_str.endsWith(" + ") ||
+      replace_str.endsWith(" - ") ||
+      replace_str.endsWith(" * ") ||
+      replace_str.endsWith(" / ") ||
+      replace_str.endsWith(" % ") ||
+      replace_str.endsWith(".")
+    ) {
       alert("식의 마지막에 기호가 올 수 없습니다.");
       return;
     }
@@ -42,7 +49,9 @@ function Calculator() {
       replace_str.endsWith(" + ") ||
       replace_str.endsWith(" - ") ||
       replace_str.endsWith(" * ") ||
-      replace_str.endsWith(" / ")
+      replace_str.endsWith(" / ") ||
+      replace_str.endsWith(" % ") ||
+      replace_str.endsWith(".")
     ) {
       alert("식의 처음에 기호가 올 수 없습니다.");
       return;
@@ -73,75 +82,73 @@ function Calculator() {
   };
 
   return (
-    <div className="body">
-      <div className="MainContainer">
-        <input readOnly className="InputBar" value={calc} />
-        <div className="ButtonContainer">
-          <button className="Button" onClick={allClear}>
-            AC
-          </button>
-          <button className="Button" onClick={delCalc}>
-            DEL
-          </button>
-          <button className="Button" value="%" onClick={getOper}>
-            %
-          </button>
-          <button className="Button" value="÷" onClick={getOper}>
-            ÷
-          </button>
-          <button className="Button" value={7} onClick={getNum}>
-            7
-          </button>
-          <button className="Button" value={8} onClick={getNum}>
-            8
-          </button>
-          <button className="Button" value={9} onClick={getNum}>
-            9
-          </button>
-          <button className="Button" value="×" onClick={getOper}>
-            ×
-          </button>
-          <button className="Button" value={4} onClick={getNum}>
-            4
-          </button>
-          <button className="Button" value={5} onClick={getNum}>
-            5
-          </button>
-          <button className="Button" value={6} onClick={getNum}>
-            6
-          </button>
-          <button className="Button" value="-" onClick={getOper}>
-            -
-          </button>
-          <button className="Button" value={1} onClick={getNum}>
-            1
-          </button>
-          <button className="Button" value={2} onClick={getNum}>
-            2
-          </button>
-          <button className="Button" value={3} onClick={getNum}>
-            3
-          </button>
-          <button className="Button" value="+" onClick={getOper}>
-            +
-          </button>
-          <button className="Button ZeroButton" value={0} onClick={getNum}>
-            0
-          </button>
-          <button className="Button" value="." onClick={getPoint}>
-            .
-          </button>
-          <button className="Button CalButton" onClick={getResult}>
-            =
-          </button>
-        </div>
-        <div className="HistoryContainer">
-          <ul className="HistoryList">
-            {history.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
+    <div className="MainContainer">
+      <input readOnly className="InputBar" value={calc} />
+      <div className="ButtonContainer">
+        <button className="Button" onClick={allClear}>
+          AC
+        </button>
+        <button className="Button" onClick={delCalc}>
+          DEL
+        </button>
+        <button className="Button" value="%" onClick={getOper}>
+          %
+        </button>
+        <button className="Button" value="÷" onClick={getOper}>
+          ÷
+        </button>
+        <button className="Button" value={7} onClick={getNum}>
+          7
+        </button>
+        <button className="Button" value={8} onClick={getNum}>
+          8
+        </button>
+        <button className="Button" value={9} onClick={getNum}>
+          9
+        </button>
+        <button className="Button" value="×" onClick={getOper}>
+          ×
+        </button>
+        <button className="Button" value={4} onClick={getNum}>
+          4
+        </button>
+        <button className="Button" value={5} onClick={getNum}>
+          5
+        </button>
+        <button className="Button" value={6} onClick={getNum}>
+          6
+        </button>
+        <button className="Button" value="-" onClick={getOper}>
+          -
+        </button>
+        <button className="Button" value={1} onClick={getNum}>
+          1
+        </button>
+        <button className="Button" value={2} onClick={getNum}>
+          2
+        </button>
+        <button className="Button" value={3} onClick={getNum}>
+          3
+        </button>
+        <button className="Button" value="+" onClick={getOper}>
+          +
+        </button>
+        <button className="Button ZeroButton" value={0} onClick={getNum}>
+          0
+        </button>
+        <button className="Button" value="." onClick={getPoint}>
+          .
+        </button>
+        <button className="Button CalButton" onClick={getResult}>
+          =
+        </button>
+      </div>
+      <div className="HistoryContainer">
+        <ul className="HistoryList">
+          {history.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

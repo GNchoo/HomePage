@@ -17,13 +17,13 @@ const headerNav = [
     path: "/game",
   },
   {
-    display: "유틸",
-    path: "/Util",
+    display: "도구",
+    path: "/util",
   },
 
   {
-    display: "로그인",
-    path: "/Login",
+    display: "영화",
+    path: "/movie",
   },
 ];
 

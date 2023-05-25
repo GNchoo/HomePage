@@ -1,29 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import background from "../assets/switch.webp";
+import "../components/game/game.css";
 
 export class Game extends Component {
   render() {
     return (
-      <div
-        className="Worm"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          background: `url(${background})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <h1 style={{ color: "white", textShadow: "2px 2px 4px black" }}>지렁이게임</h1>
+      <div className="game-list">
+        <h1 className="game-title">지렁이게임</h1>
         <h2>
-          <Link to="/worm">Play</Link>
+          <Link to="/worm" className="game-link">
+            Play
+          </Link>
         </h2>
-        <h1 style={{ color: "white", textShadow: "2px 2px 4px black" }}>크롬다이노</h1>
+        <h1 className="game-title">크롬다이노</h1>
         <h2>
-          <Link to="/dino">Play</Link>
+          <Link to="/dino" className="game-link">
+            Play
+          </Link>
         </h2>
       </div>
     );

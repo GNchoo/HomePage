@@ -10,6 +10,7 @@ import Util from "../pages/util";
 import Paint from "../components/tool/paint";
 import Cal from "../components/tool/cal";
 import Dino from "../components/game/dino";
+import Movie from "../pages/movie";
 
 function rou() {
   return (
@@ -23,6 +24,7 @@ function rou() {
         <Route path="/util" element={<Util />} />
         <Route path="/paint" element={<Paint />} />
         <Route path="/cal" element={<Cal />} />
+        <Route path="/movie" element={<Movie />} />
       </Routes>
     </div>
   );
